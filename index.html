@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather forecast</title>
+</head>
+<link rel="stylesheet" href="./styles/shape.css">
+<link rel="stylesheet" href="./styles/searchbar.css">
+<link rel="stylesheet" href="./styles/style.css">
+<link rel="stylesheet" href="./styles/slider.css">
+<link rel="stylesheet" href="./styles/gradient.css">
+<body id="body" class="gradient">
+    <header>
+        <p class="important-text">MY WEATHER</p>
+        <form id="search-form">
+            <input id="search-input" type="search" required>
+            <i onclick="Search()" class="fa fa-search">
+                <img id="search-icon" class="icon" src="./icons/search.png" alt="">
+            </i>
+        </form>
+        <div class = 'toggle-switch'>
+            <label id="toggle-label">
+                <input checked="true" onclick="DarkmodeToggleClick()" id="theme-checkbox" type = 'checkbox'>
+                <span id="slider" class='slider'></span>
+            </label>
+        </div>
+    </header>
+    <main>
+        <nav id="nav" class="hidden">
+            <ul id="nav-ul">
+                <li onclick="TodayClick()">Today</li>
+                <li onclick="FiveDaysClick()">5-day forecast</li>
+            </ul>
+        </nav>
+        <div id="five-day" class="five-day-weather hidden"></div>
+        <div id="error" class="error-window hidden">
+            <p class="error-text">404</p>
+            <p>NOT FOUND</p>
+            <p class="to-down">Please enter a different city</p>
+        </div>
+        <div id="current" class="current-weather hidden">
+            <div class="div-header">
+                <p class="important-text">CURRENT WEATHER</p>
+                <p id="date" class="important-text"></p>
+            </div>
+            <div class="current-weather-info">
+                <div>
+                    <div class="small-img-container">
+                        <img id="weather-img" alt="">
+                    </div>
+                    <p id="main">Weather</p>
+                </div>
+                <div>
+                    <div class="huge-temperature-container">
+                        <p class="huge-temperature" id="temp"></p>
+                    </div>
+                    <p id="feels-like"></p>
+                </div>
+                <div>
+                    <div>
+                        <p>Sunrise:</p>
+                        <p>Sunset:</p>
+                        <p>Duration:</p>
+                    </div>
+                    <div>
+                        <p id="sunrise"></p>
+                        <p id="sunset"></p>
+                        <p id="duration"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="hourly" class="hourly-weather hidden">
+            <div class="div-header">
+                <p class="important-text">HOURLY</p>
+            </div>
+            <table>
+                <tbody>
+                    <tr id="hourly-container">
+                        <td>
+                            <p id="week-day"></p>
+                            <div class="small-img-container">
+                                <img src="" alt="">
+                            </div>
+                            <p>Forecast</p>
+                            <p>Temp(°C)</p>
+                            <p>Wind(km/h)</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="nearby" class="nearby-places hidden">
+            <div class="div-header">
+                <p class="important-text">NEARBY PLACES</p>
+            </div>
+            <div id="nearby-places" class="nearby-places-grid"></div>
+        </div>
+    </main>
+    <div id="shape" class="custom-shape-bottom">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path class="shape-fill" id="shape-fill" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

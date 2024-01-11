@@ -1,0 +1,29 @@
+.gradient {
+    animation: gradient-animation 120s ease infinite;
+}
+
+.morning {
+    background: linear-gradient(0deg, #077b88, #6bb6bc, #9dc6ca, #fb9f8a, #ee7421);
+    background-size: 400% 1000%;
+}
+
+.afternoon {
+    background: linear-gradient(0deg, #6bcfff, #8e9dc7, #f5ebe0, #d9e1ff, #afc5ff);
+    background-size: 400% 1000%;
+}
+
+.evening {
+    background: linear-gradient(0deg, #fe9380, #ffc84d, #ffeaba, #b0d5f5, #475d85);
+    background-size: 400% 1000%;
+}
+
+.night {
+    background: linear-gradient(0deg, #081448, #282157, #4e2c67, #281339, #0f0c40);
+    background-size: 400% 1000%;
+}
+
+@keyframes gradient-animation {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 90%}
+    100%{background-position:50% 0%}
+}
